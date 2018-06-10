@@ -1,0 +1,17 @@
+{
+  "universal": {
+    "skipInstall": false,
+    "directory": ".",
+    "project": "talk-over"
+  },
+  "serverless": {
+    "provider": "aws",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "talk-over",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

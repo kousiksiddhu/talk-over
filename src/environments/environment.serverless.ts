@@ -8,5 +8,5 @@ export const environment = {
     storageBucket: "",
     messagingSenderId: "543781395552"
   },
-	baseHref: '/'
+	baseHref: '/production/'
 };

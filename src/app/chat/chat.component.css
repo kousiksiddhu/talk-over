@@ -1,0 +1,78 @@
+.main-heading{
+    padding: 20px 10px 10px;
+    margin: 0;
+    color: #3f51b5;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+
+.sub-heading{
+    margin: 0 10px;
+    color: #333333;
+}
+
+.chat-container{
+    padding: 10px 0 120px;
+    margin-top: 10px;
+    /* background: linear-gradient(135deg, #ffb76b 0%,#ffa73d 50%,#ff7c00 50%,#ff7f04 100%); */
+}
+
+.chat-container li{
+    list-style: none;
+    padding: 10px;
+    overflow: auto;
+}
+
+.chat-container mat-card{
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #3f51b5 0%, #3f51b5c7 100%);
+    color: #ffffff;
+    width: 90%;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    border-top-left-radius: 0;
+}
+
+.chat-container .current-user mat-card{
+    background: linear-gradient(to bottom, #009933 0%, #33cc33 100%);
+    float: right;
+    text-align: right;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0;
+}
+
+.chat-container mat-card img{
+    height: 32px;
+}
+
+.chat-input-wrapper{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat-input-form{
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
+    padding: 20px 20px 0;
+    font-size: 16px;
+}
+
+.chat-input-form .form-actions{
+    display: inline-block;
+    vertical-align: top;
+    margin: 3px 0px;
+}
+
+.chat-input-form mat-form-field{
+    width: calc(100% - 56px);
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.chat-input-form .mat-icon{
+    height: 27px;
+}

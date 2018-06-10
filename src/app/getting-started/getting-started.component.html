@@ -1,0 +1,43 @@
+
+<div class="container">
+  <h1 class="main-heading">Welcome to Talk Over!! An Anonymous Group Chat Application</h1>
+  <p class="sub-heading">The place where you can do a Anonymous Group Chat as simple as that.</p>
+  
+  <mat-card class="generate-link">
+    <mat-card-header>
+      <mat-card-title>Click the generate link button and get started</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button class="btn-generate-url" mat-raised-button color="primary" (click)=generateAnonymousLink()>
+          Generate URL
+      </button>
+      <form onsubmit="return false;" *ngIf="conversationUrl">
+          <mat-form-field>
+            <input matInput name="conversationUrl" #conversationUrlInput type="text" value="{{conversationUrl}}" autocomplete="off" readonly />
+          </mat-form-field>
+          <div class="form-actions">
+            <button mat-button (click)="copyConversationUrl(conversationUrlInput)">
+              <mat-icon color="secondary">link</mat-icon>
+              Copy link
+            </button>
+            <button mat-button>
+              <mat-icon>share</mat-icon>
+              Share link
+            </button>
+            <button mat-button routerLink="/chat/{{UID}}">
+              <mat-icon>open_in_new</mat-icon>
+              Open link
+            </button>
+          </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-list class="guidelines">
+    <mat-list-item>Step 1: Generate a group chat link</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Step 2: Share it with your network</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Step 3: And Start Chatting</mat-list-item>
+  </mat-list>
+</div>
