@@ -22,11 +22,11 @@
     color: #f57b02;
 }
 
-.main-heading,
+/* .main-heading,
 .sub-heading,
 .mat-card-title,
 .mat-list .mat-list-item{
-}
+} */
 
 .guidelines{
     background-color: #f57b02;
@@ -84,7 +84,7 @@
         line-height: 1.2;
         font-size: 24px;
     }
-    
+
     .main-heading span{
         font-size: 1.2em;
     }
