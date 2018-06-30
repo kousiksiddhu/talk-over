@@ -1,22 +1,27 @@
 .main-heading{
     padding: 20px 10px 10px;
-    margin: 0;
-    color: #3f51b5;
+    margin: 0 15%;
+    color: #424242;
     position: sticky;
     top: 0;
-    background: white;
     z-index: 1;
+    background-color: #f57b02;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(360,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23f57b02'/%3E%3Cstop offset='1' stop-color='%23ffa000'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1' gradientTransform='rotate(272,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23fecb27' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23fecb27' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2' gradientTransform='rotate(106,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23fecb27' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23fecb27' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg %3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .sub-heading{
     margin: 0 10px;
-    color: #333333;
+    padding: 0 15%;
+    color: #fff;
+    text-shadow: 0px 1px 2px #FF5722;
 }
 
 .chat-container{
     padding: 10px 0 120px;
-    margin-top: 10px;
-    /* background: linear-gradient(135deg, #ffb76b 0%,#ffa73d 50%,#ff7c00 50%,#ff7f04 100%); */
+    margin: 10px 15% 0;
 }
 
 .chat-container li{
@@ -27,8 +32,8 @@
 
 .chat-container mat-card{
     border-radius: 10px;
-    background: linear-gradient(to bottom, #3f51b5 0%, #3f51b5c7 100%);
-    color: #ffffff;
+    /* background: linear-gradient(to bottom, #3f51b5 0%, #3f51b5c7 100%); */
+    background: #FFFFFFDD;
     width: 90%;
     padding: 15px 10px;
     box-sizing: border-box;
@@ -36,7 +41,7 @@
 }
 
 .chat-container .current-user mat-card{
-    background: linear-gradient(to bottom, #009933 0%, #33cc33 100%);
+    /* background: linear-gradient(to bottom, #009933 0%, #33cc33 100%); */
     float: right;
     text-align: right;
     border-top-left-radius: 10px;
@@ -55,7 +60,7 @@
 
 .chat-input-form{
     padding: 20px;
-    background: white;
+    background: #FFFFFFF7;
     box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
     padding: 20px 20px 0;
     font-size: 16px;
@@ -75,4 +80,18 @@
 
 .chat-input-form .mat-icon{
     height: 27px;
+}
+
+@media all and (max-width: 768px){
+    .main-heading{
+        margin: 0 3%;
+    }
+    
+    .sub-heading{
+        padding: 0 3%;
+    }
+    
+    .chat-container{
+        margin: 10px 3% 0;
+    }
 }

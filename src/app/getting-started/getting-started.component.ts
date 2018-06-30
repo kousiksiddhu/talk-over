@@ -22,12 +22,12 @@ export class GettingStartedComponent implements OnInit {
   ngOnInit() {
   }
 
-  generateAnonymousLink() {
+  generateAnonymousLink(title:HTMLInputElement, description:HTMLInputElement) {
     this.UID = this.getUID();
 
     this.collection.doc(this.UID).set({
-      title: "Start Chatting",
-      description: "This is an anonymous chat platform. User identity will not be revealed.",
+      title: title.value || "Start Chatting",
+      description: description.value || "This is an anonymous chat platform. User identity will not be revealed.",
       message: []
     }).catch(error => {
       alert("Error Occured");
@@ -61,4 +61,7 @@ export class GettingStartedComponent implements OnInit {
     document.execCommand('copy');
   }
 
+  openDialog(): void {
+
+  }
 }

@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1 class="main-heading">Welcome to Talk Over!! An Anonymous Group Chat Application</h1>
+  <h1 class="main-heading">Welcome to <span>Talk Over</span> !!<br> An Anonymous Group Chat Application</h1>
   <p class="sub-heading">The place where you can do a Anonymous Group Chat as simple as that.</p>
   
   <mat-card class="generate-link">
@@ -8,25 +8,37 @@
       <mat-card-title>Click the generate link button and get started</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <button class="btn-generate-url" mat-raised-button color="primary" (click)=generateAnonymousLink()>
-          Generate URL
-      </button>
-      <form onsubmit="return false;" *ngIf="conversationUrl">
+      <form onsubmit="return false;" *ngIf="!conversationUrl" class="chat-details-form">
+        <mat-form-field>
+          <mat-label>Enter Chat Title (Optional)</mat-label>
+          <input type="text" matInput #chatTitle name="chatTitle" autocomplete="off" placeholder="" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter Chat Description (Optional)</mat-label>
+          <input type="text" matInput #chatDescription name="chatDescription" autocomplete="off" placeholder="" />
+        </mat-form-field>
+        <div class="form-actions">
+            <button class="btn-generate-url" mat-raised-button color="primary" (click)=generateAnonymousLink(chatTitle,chatDescription)>
+                Generate URL
+            </button>
+        </div>
+      </form>
+      <form onsubmit="return false;" *ngIf="conversationUrl" class="chat-link-form">
           <mat-form-field>
             <input matInput name="conversationUrl" #conversationUrlInput type="text" value="{{conversationUrl}}" autocomplete="off" readonly />
           </mat-form-field>
           <div class="form-actions">
-            <button mat-button (click)="copyConversationUrl(conversationUrlInput)">
+            <button mat-raised-button color="primary" (click)="copyConversationUrl(conversationUrlInput)">
               <mat-icon color="secondary">link</mat-icon>
-              Copy link
+              Copy
             </button>
-            <button mat-button>
+            <button mat-raised-button color="primary">
               <mat-icon>share</mat-icon>
-              Share link
+              Share
             </button>
-            <button mat-button routerLink="/chat/{{UID}}">
+            <button mat-raised-button color="primary" routerLink="/chat/{{UID}}">
               <mat-icon>open_in_new</mat-icon>
-              Open link
+              Open
             </button>
           </div>
       </form>

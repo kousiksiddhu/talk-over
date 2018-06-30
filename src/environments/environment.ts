@@ -11,8 +11,7 @@ export const environment = {
     projectId: "talk-over",
     storageBucket: "",
     messagingSenderId: "543781395552"
-  },
-	baseHref: '/'
+  }
 };
 
 /*
