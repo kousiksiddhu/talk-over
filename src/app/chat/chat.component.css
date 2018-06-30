@@ -33,7 +33,7 @@
 .chat-container mat-card{
     border-radius: 10px;
     /* background: linear-gradient(to bottom, #3f51b5 0%, #3f51b5c7 100%); */
-    background: #FFFFFFDD;
+    background: rgba(255, 255, 255, 0.867);
     width: 90%;
     padding: 15px 10px;
     box-sizing: border-box;
@@ -59,8 +59,7 @@
 }
 
 .chat-input-form{
-    padding: 20px;
-    background: #FFFFFFF7;
+    background: rgba(255, 255, 255, 0.969);
     box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
     padding: 20px 20px 0;
     font-size: 16px;
