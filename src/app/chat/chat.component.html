@@ -1,33 +1,42 @@
-
 <h1 class="main-heading">{{ (conversations | async)?.title }}</h1>
 <p class="sub-heading">{{ (conversations | async)?.description }}</p>
 
 <ul class="chat-container">
-  <li class="text" *ngFor="let msg of (messages | async)" [class.current-user]="user.userId == msg.user">
-      <mat-card>
-          <mat-card-header>
-            <div mat-card-avatar><img src="assets/images/user-avatar.png" alt="user"></div>
-            <mat-card-title>User {{msg.user}}</mat-card-title>
-            <mat-card-subtitle></mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-              {{msg.message}}
-          </mat-card-content>
-      </mat-card>
+  <li
+    class="text"
+    *ngFor="let msg of (messages | async)"
+    [class.current-user]="user.userId == msg.user"
+    [class.continous-msg]="msg.continuousMsg == true"
+  >
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar><img src="{{ msg.userIcon }}" alt="user" /></div>
+        <mat-card-title>{{ msg.userName }}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content> {{ msg.message }} </mat-card-content>
+    </mat-card>
   </li>
 </ul>
 
 <div class="chat-input-wrapper">
   <form (submit)="sendMessage(message)" class="chat-input-form">
-      <mat-form-field appearance="fill">
-        <mat-label>Type your message here</mat-label>
-        <input matInput #message maxlength="1500" placeholder="Message" autocomplete="off" data-emojiable="true">
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-      </mat-form-field>
-      <div class="form-actions">
-        <button type="submit" mat-fab color="primary">
-            <mat-icon>send</mat-icon>
-        </button>
-      </div>
-    </form>
+    <mat-form-field appearance="fill">
+      <mat-label>Type your message here</mat-label>
+      <input
+        matInput
+        #message
+        maxlength="1500"
+        placeholder="Message"
+        autocomplete="off"
+        data-emojiable="true"
+      />
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    </mat-form-field>
+    <div class="form-actions">
+      <button type="submit" mat-fab color="primary">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+  </form>
 </div>
