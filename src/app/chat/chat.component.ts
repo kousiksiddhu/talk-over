@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -31,7 +31,7 @@ export interface Messages {
   templateUrl: "./chat.component.html",
   styleUrls: ["./chat.component.css"]
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, OnDestroy {
   document: AngularFirestoreDocument<Conversation>;
   conversations: Observable<Conversation>;
   getRouteId;
@@ -45,7 +45,7 @@ export class ChatComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let profile = randomProfile.profile();
+    const profile = randomProfile.profile();
     this.getRouteId = this.activatedRoute.params.subscribe(params => {
       this.uniqueID = params["id"];
     });
@@ -60,7 +60,7 @@ export class ChatComponent implements OnInit {
       if (
         value &&
         value.length &&
-        value[value.length - 1].user == this.user.userId
+        value[value.length - 1].user === this.user.userId
       ) {
         this.user.continuousMsg = true;
         setTimeout(() => {
@@ -83,7 +83,7 @@ export class ChatComponent implements OnInit {
       return false;
     }
 
-    let msg = {
+    const msg = {
       user: this.user.userId,
       userName: this.user.userName,
       userIcon: this.user.userIcon,

@@ -12,6 +12,7 @@
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js",
     "format:fix": "pretty-quick --staged",
+    "precommit": "run-s format:fix lint",
     "lint": "ng lint"
   },
   "private": true,

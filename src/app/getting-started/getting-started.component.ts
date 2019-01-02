@@ -9,7 +9,7 @@ import {
 import { Observable } from "rxjs";
 
 @Component({
-  selector: "getting-started",
+  selector: "app-getting-started",
   templateUrl: "./getting-started.component.html",
   styleUrls: ["./getting-started.component.css"]
 })
@@ -47,7 +47,7 @@ export class GettingStartedComponent implements OnInit {
       })
       .then(response => {
         console.log(response);
-        let baseUrl = (this.platformLocation as any).location.href;
+        const baseUrl = (this.platformLocation as any).location.href;
 
         if (baseUrl) {
           this.conversationUrl = baseUrl + "chat/" + this.UID;
@@ -59,8 +59,8 @@ export class GettingStartedComponent implements OnInit {
   }
 
   getUID() {
-    let date = new Date();
-    let components = [
+    const date = new Date();
+    const components = [
       date.getFullYear(),
       date.getMonth(),
       date.getDate(),
